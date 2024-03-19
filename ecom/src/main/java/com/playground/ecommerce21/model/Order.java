@@ -6,6 +6,7 @@ package com.playground.ecommerce21.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
 public class Order {
     @Id
     private Long id;
+    @OneToMany
     private List<Product> products;
     private String status;
 
