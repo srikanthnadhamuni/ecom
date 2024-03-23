@@ -1,32 +1,69 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+// import "./ListGroup.css"; // Import your CSS file
+
 interface Props {
-  items: string[];
   heading: string;
 }
-function ListGroup({ items, heading }: Props) {
-  const [selectedIndex, setSelectedIndex] = useState(-1);
 
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
+
+function ListGroup({ heading }: Props) {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [selectedId, setSelectedId] = useState<number>();
+
+  useEffect(() => {
+    fetch("http://localhost:7855/products/all")
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => console.error("Error:", error));
+  }, []);
+  console.log(selectedId);
+  console.log(products);
   return (
     <>
       <h1>{heading}</h1>
-      {items.length === 0 && <p>No items found</p>}
-      <ul className="list-group">
-        {items.map((item, index) => (
-          <li
-            className={
-              selectedIndex === index
-                ? "list-group-item active"
-                : "list-group-item"
-            }
-            key={item}
-            onClick={() => {
-              setSelectedIndex(index);
-            }}
+      <div className="row">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className={`col-sm-4 card-container list-group-item ${
+              product.id === selectedId ? "active" : ""
+            }`}
+            onClick={() => setSelectedId(product.id)}
           >
-            {item}
-          </li>
+            <div className="card">
+              <img
+                src={product.image}
+                className="card-img-top"
+                alt={product.name}
+              />
+              <div className="card-body">
+                <p
+                  className={`card-title ${
+                    product.id === selectedId ? "active" : ""
+                  }`}
+                >
+                  {product.name}
+                </p>
+                <p className="card-text">{product.description}</p>
+                <p className="card-text">
+                  <strong>Price:</strong> ${product.price}
+                </p>
+                <p className="card-text">
+                  <strong>Quantity:</strong> {product.quantity}
+                </p>
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 }
