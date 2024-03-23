@@ -1,22 +1,9 @@
-import React, { useEffect, useState } from "react";
-import "./ListGroup.css"; // Import your CSS file
-
+import { useState } from "react";
 interface Props {
   heading: string;
 }
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  quantity: number;
-  image: string;
-}
-
-function ListGroup({ heading }: Props) {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [selectedId, setSelectedId] = useState<number>();
+function ListGroup({ items, heading }: Props) {
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   useEffect(() => {
     fetch("http://localhost:7855/products/all")
@@ -25,43 +12,26 @@ function ListGroup({ heading }: Props) {
       .catch((error) => console.error("Error:", error));
   }, []);
   console.log(selectedId);
-
+  console.log(products);
   return (
     <>
       <h1>{heading}</h1>
-      <div className="row">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className={`col-sm-4 card-container list-group-item ${
-              product.id === selectedId ? "active" : ""
-            }`}
-            onClick={() => setSelectedId(product.id)}
+      {items.length === 0 && <p>No items found</p>}
+      <ul className="list-group">
+        {items.map((item, index) => (
+          <li
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+            key={item}
+            onClick={() => {
+              setSelectedIndex(index);
+            }}
           >
-            <div className="card">
-              <img
-                src={product.image}
-                className="card-img-top"
-                alt={product.name}
-              />
-              <div className="card-body">
-                <li
-                  className={`card-title ${
-                    product.id === selectedId ? "active" : ""
-                  }`}
-                >
-                  {product.name}
-                </li>
-                <p className="card-text">{product.description}</p>
-                <p className="card-text">
-                  <strong>Price:</strong> ${product.price}
-                </p>
-                <p className="card-text">
-                  <strong>Quantity:</strong> {product.quantity}
-                </p>
-              </div>
-            </div>
-          </div>
+            {item}
+          </li>
         ))}
       </div>
     </>
