@@ -1,0 +1,7 @@
+.card-container {
+    cursor: pointer;
+  }
+  
+  .card-container.active {
+    border: 2px solid red;
+  }
