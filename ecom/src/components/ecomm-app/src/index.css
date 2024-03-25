@@ -10,5 +10,6 @@
 .headline {
   display: flex;
   justify-content: center;
-  item-align: center;
+  align-items: center;
+  text-align: center;
 }

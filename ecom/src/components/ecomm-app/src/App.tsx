@@ -8,14 +8,17 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/products/all"
-          element={<ProductList heading="Product List" />}
-        />
-        <Route path="/products/:id" element={<Product />} />
-      </Routes>
+
+      <div className="p-1">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/products/all"
+            element={<ProductList heading="Product List" />}
+          />
+          <Route path="/products/:id" element={<Product />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

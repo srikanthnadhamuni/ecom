@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ProductList.css"; // Import your CSS file
 import { useNavigate } from "react-router-dom";
+import formatName from "../uitils/formatProductName";
 
 interface Props {
   heading: string;
@@ -30,52 +31,51 @@ function ListGroup({ heading }: Props) {
   console.log(products);
   const navigate = useNavigate(); // to reddirect to /products/id
   return (
-    <>
+    <div className="p-5 d-flex flex-column  align-items-center">
       <h1>{heading}</h1>
-      <div className="row">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className={`col-sm-4 card-container list-group-item ${
-              product.id === selectedId ? "active" : ""
-            }`}
-            onClick={() => setSelectedId(product.id)}
-          >
-            <div className=".card">
-              <img
-                //src={product.image}
-                src={product.image + product.asin + ".01._SCMZZZZZZZ_.jpg"}
-                className=".card-img-top"
-                alt={product.name}
-                // style={{ width: "200px", height: "200px" }}
-              />
-              <div className="card-body">
-                <p
-                  className={`card-title ${
-                    product.id === selectedId ? "active" : ""
-                  }`}
-                >
-                  {product.name}
-                </p>
-                <p className="card-text">{product.description}</p>
-                <p className="card-text">
-                  <strong>Price:</strong> ${product.price}
-                </p>
-                <p className="card-text">
-                  <strong>Quantity:</strong> {product.quantity}
-                </p>
-                <button
-                  className="view-button"
-                  onClick={() => navigate(`/products/${product.id}`)}
-                >
-                  View Product
-                </button>
+      <div className="container gap-2">
+        <div className="row">
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className={`col-sm card-container list-group-item p-2`}
+              onClick={() => setSelectedId(product.id)}
+            >
+              <div className="card">
+                <img
+                  //src={product.image}
+                  src={product.image + product.asin + ".01._SCMZZZZZZZ_.jpg"}
+                  className="card-img-top"
+                  alt={product.name}
+                />
+                <div className="card-body">
+                  <p
+                    className={`card-title ${
+                      product.id === selectedId ? "active" : ""
+                    }`}
+                  >
+                    {formatName(product.name)}
+                  </p>
+                  {/* <p className="card-text">{product.description}</p> */}
+                  <p className="card-text">
+                    <strong>Price:</strong> ${product.price}
+                  </p>
+                  <p className="card-text">
+                    <strong>Quantity:</strong> {product.quantity}
+                  </p>
+                  <button
+                    className="view-button"
+                    onClick={() => navigate(`/products/${product.id}`)}
+                  >
+                    View Product
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

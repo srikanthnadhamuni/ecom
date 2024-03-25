@@ -1,9 +1,9 @@
 /* ProductList.css */
 
 .card-container {
-    border: 5px solid rgb(255, 140, 0);
-    margin-bottom: 30px;
-    margin-left: 10px;
+    border: 5px solid rgb(255, 140, 0)
+    /* margin-bottom: 30px; */
+    /* margin-left: 10px; */
 }
 
 .card-container.active {
@@ -18,14 +18,14 @@
 }
 
 .card-body {
-    display:grid;
-    justify-content:safe;
-    align-items:flex-start;
+    /* display:grid; */
+    /* justify-content:safe; */
+    /* align-items:flex-start; */
 }
 
 .card-img-top {
-    width: 1cap;
-    height: 100px;
+    width: 200px !important;
+    height: 200px !important;
     object-fit: cover;
 }
 
