@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ProductList.css"; // Import your CSS file
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   heading: string;
@@ -27,6 +28,7 @@ function ListGroup({ heading }: Props) {
   }, []);
   console.log(selectedId);
   console.log(products);
+  const navigate = useNavigate(); // to reddirect to /products/id
   return (
     <>
       <h1>{heading}</h1>
@@ -63,12 +65,10 @@ function ListGroup({ heading }: Props) {
                   <strong>Quantity:</strong> {product.quantity}
                 </p>
                 <button
-                  className="btn btn-primary"
-                  onClick={() =>
-                    (window.location.href = `./Product.tsx?id=${product.id}`)
-                  }
+                  className="view-button"
+                  onClick={() => navigate(`/products/${product.id}`)}
                 >
-                  Add to Cart
+                  View Product
                 </button>
               </div>
             </div>
