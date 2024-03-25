@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 public class Product {
     @Id
     private Long id;
+    private String asin; // Added ASIN field
     private String name;
     private BigDecimal price;
     private String description;
@@ -23,8 +24,10 @@ public class Product {
         // Default constructor
     }
 
-    public Product(Long id, String name, BigDecimal price, String description, int quantity, String image) {
+    public Product(Long id, String asin, String name, BigDecimal price, String description, int quantity,
+            String image) {
         this.id = id;
+        this.asin = asin;
         this.name = name;
         this.price = price;
         this.description = description;
@@ -39,6 +42,14 @@ public class Product {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getAsin() {
+        return asin;
+    }
+
+    public void setAsin(String asin) {
+        this.asin = asin;
     }
 
     public String getName() {
@@ -79,5 +90,16 @@ public class Product {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public void printProductDetails() {
+        System.out.println("Product Details:");
+        System.out.println("ID: " + id);
+        System.out.println("ASIN: " + asin);
+        System.out.println("Name: " + name);
+        System.out.println("Price: " + price);
+        System.out.println("Description: " + description);
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Image: " + image);
     }
 }

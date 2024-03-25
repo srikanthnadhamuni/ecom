@@ -6,41 +6,69 @@ DROP TABLE IF EXISTS products CASCADE;
 
 -- Create products table if it doesn't exist
 CREATE TABLE IF NOT EXISTS products (
-            id BIGSERIAL PRIMARY KEY,
-            name VARCHAR(255) NOT NULL,
-            description TEXT,
-            price DECIMAL(10, 2),
-            quantity INTEGER NOT NULL,
-            image VARCHAR(255)
-        );
+    id BIGSERIAL PRIMARY KEY,
+    asin VARCHAR(16) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2),
+    quantity INTEGER NOT NULL,
+    image VARCHAR(255)
+);
 
 -- Insert sample data into products table
-INSERT INTO products (name, description, price, quantity, image)
+INSERT INTO products (asin, name, description, price, quantity, image)
 VALUES
-('Echo Dot (3rd Gen)', 'Smart speaker with Alexa', 39.99, 100, 'https://example.com/echodot.jpg'),
-('Instant Pot Duo 7-in-1', 'Electric pressure cooker', 89.99, 50, 'https://example.com/instantpot.jpg'),
-('Kindle Paperwhite', 'Waterproof e-reader', 129.99, 75, 'https://example.com/kindle.jpg'),
-('Philips Sonicare Toothbrush', 'Electric rechargeable toothbrush', 49.95, 150, 'https://example.com/sonicare.jpg'),
-('LED Desk Lamp', 'Adjustable brightness desk lamp with USB charging port', 29.99, 100, 'https://example.com/leddesklamp.jpg'),
-('Wireless Bluetooth Earbuds', 'Noise-cancelling wireless earbuds with charging case', 59.99, 150, 'https://example.com/bluetoothearbuds.jpg'),
-('Stainless Steel Water Bottle', '24 oz double-wall vacuum insulated water bottle', 19.99, 200, 'https://example.com/waterbottle.jpg'),
-('Yoga Mat', 'Eco-friendly non-slip yoga mat', 25.99, 120, 'https://example.com/yogamat.jpg'),
-('Backpack', 'Water-resistant travel backpack with laptop compartment', 49.99, 90, 'https://example.com/backpack.jpg'),
-('Electric Kettle', '1.7L stainless steel electric kettle with auto shut-off', 29.95, 80, 'https://example.com/electrickettle.jpg'),
-('Smartwatch', 'Fitness tracker with heart rate monitor', 99.99, 110, 'https://example.com/smartwatch.jpg'),
-('Gaming Mouse', 'RGB backlit gaming mouse with adjustable DPI', 35.99, 140, 'https://example.com/gamingmouse.jpg'),
-('Portable Charger', '10000mAh power bank with dual USB ports', 21.99, 130, 'https://example.com/portablecharger.jpg'),
-('Bluetooth Speaker', 'Waterproof portable Bluetooth speaker', 39.99, 85, 'https://example.com/bluetoothspeaker.jpg'),
-('Robot Vacuum Cleaner', 'Automatic robot vacuum cleaner with smart navigation', 149.99, 70, 'https://example.com/robotvacuum.jpg'),
-('Action Camera', '4K action camera with waterproof case', 79.99, 60, 'https://example.com/actioncamera.jpg'),
-('Bookshelf', '5-tier industrial style bookshelf', 89.99, 50, 'https://example.com/bookshelf.jpg'),
-('Coffee Maker', 'Single serve coffee maker with reusable filter', 59.95, 100, 'https://example.com/coffeemaker.jpg'),
-('Memory Foam Pillow', 'Orthopedic contour memory foam pillow', 29.99, 150, 'https://example.com/memoryfoampillow.jpg'),
-('Office Chair', 'Ergonomic office chair with lumbar support', 109.99, 80, 'https://example.com/officechair.jpg'),
-('Sneakers', 'Lightweight running sneakers for men and women', 49.99, 200, 'https://example.com/sneakers.jpg'),
-('Waffle Maker', 'Non-stick Belgian waffle maker with adjustable browning', 25.99, 90, 'https://example.com/wafflemaker.jpg'),
-('Air Fryer', '5.8QT large capacity air fryer with touchscreen', 99.99, 70, 'https://example.com/airfryer.jpg'),
-('Desk Organizer', 'Wooden desk organizer with drawers', 19.99, 160, 'https://example.com/deskorganizer.jpg');
+('B07FZ8S74R', 'Echo Dot (3rd Gen)', 'Smart speaker with Alexa', 39.99, 100, 'http://images.amazon.com/images/P/'),
+('B00FLYWNYQ', 'Instant Pot Duo 7-in-1', 'Electric pressure cooker', 89.99, 50, 'http://images.amazon.com/images/P/'),
+('B07CXG6C9W', 'Kindle Paperwhite', 'Waterproof e-reader', 129.99, 75, 'http://images.amazon.com/images/P/'),
+('B078GVDB18', 'Philips Sonicare Toothbrush', 'Electric rechargeable toothbrush', 49.95, 150, 'http://images.amazon.com/images/P/'),
+('B016VYAWA6', 'LED Desk Lamp', 'Adjustable brightness desk lamp with USB charging port', 29.99, 100, 'http://images.amazon.com/images/P/'),
+('B07MCGZK3B', 'Wireless Bluetooth Earbuds', 'Noise-cancelling wireless earbuds with charging case', 59.99, 150, 'http://images.amazon.com/images/P/'),
+('B0CP77ZXJ4', 'Stainless Steel Water Bottle', '24 oz double-wall vacuum insulated water bottle', 19.99, 200, 'http://images.amazon.com/images/P/'),
+('B01LP0VI3G', 'Yoga Mat', 'Eco-friendly non-slip yoga mat', 25.99, 120, 'http://images.amazon.com/images/P/'),
+('B092TQG5ZD', 'Backpack', 'Water-resistant travel backpack with laptop compartment', 49.99, 90, 'http://images.amazon.com/images/P/'),
+('B0BJ85RD4V', 'Electric Kettle', '1.7L stainless steel electric kettle with auto shut-off', 29.95, 80, 'http://images.amazon.com/images/P/'),
+('B0B75WWC8F', 'Smartwatch', 'Fitness tracker with heart rate monitor', 99.99, 110, 'http://images.amazon.com/images/P/'),
+('B0CKXDSLZM', 'Gaming Mouse', 'RGB backlit gaming mouse with adjustable DPI', 35.99, 140, 'http://images.amazon.com/images/P/'),
+('B07S829LBX', 'Portable Charger', '10000mAh power bank with dual USB ports', 21.99, 130, 'http://images.amazon.com/images/P/'),
+('B078S4P3J9', 'Bluetooth Speaker', 'Waterproof portable Bluetooth speaker', 39.99, 85, 'http://images.amazon.com/images/P/'),
+('B07D75MVX9', 'Robot Vacuum Cleaner', 'Automatic robot vacuum cleaner with smart navigation', 149.99, 70, 'http://images.amazon.com/images/P/'),
+('B0CSKJTYZ5', 'Action Camera', '4K action camera with waterproof case', 79.99, 60, 'http://images.amazon.com/images/P/'),
+('B0CCXTSSLJ', 'Bookshelf', '5-tier industrial style bookshelf', 89.99, 50, 'http://images.amazon.com/images/P/'),
+('B0CT5NRN8F', 'Coffee Maker', 'Single serve coffee maker with reusable filter', 59.95, 100, 'http://images.amazon.com/images/P/'),
+('B07SDFC9QT', 'Memory Foam Pillow', 'Orthopedic contour memory foam pillow', 29.99, 150, 'http://images.amazon.com/images/P/'),
+('B0BZPJQ2X2', 'Office Chair', 'Ergonomic office chair with lumbar support', 109.99, 80, 'http://images.amazon.com/images/P/'),
+('B0CJ2ZFW1P', 'Sneakers', 'Lightweight running sneakers for men and women', 49.99, 200, 'http://images.amazon.com/images/P/'),
+('B0CKPR6634', 'Waffle Maker', 'Non-stick Belgian waffle maker with adjustable browning', 25.99, 90, 'http://images.amazon.com/images/P/'),
+('B07VM28XTR', 'Air Fryer', '5.8QT large capacity air fryer with touchscreen', 99.99, 70, 'http://images.amazon.com/images/P/'),
+('B0CP92T54K', 'Desk Organizer', 'Wooden desk organizer with drawers', 19.99, 160, 'http://images.amazon.com/images/P/');
+
+
+-- ('Echo Dot (3rd Gen)', 'Smart speaker with Alexa', 39.99, 100, 'http://images.amazon.com/images/P/B07FZ8S74R.01._SCMZZZZZZZ_.jpg'),
+-- ('Instant Pot Duo 7-in-1', 'Electric pressure cooker', 89.99, 50, 'http://images.amazon.com/images/P/B00FLYWNYQ.01._SCMZZZZZZZ_.jpg'),
+-- ('Kindle Paperwhite', 'Waterproof e-reader', 129.99, 75, 'http://images.amazon.com/images/P/B07CXG6C9W.01._SCMZZZZZZZ_.jpg'),
+-- ('Philips Sonicare Toothbrush', 'Electric rechargeable toothbrush', 49.95, 150, 'http://images.amazon.com/images/P/B09R1RRR35.01._SCMZZZZZZZ_.jpg'),
+-- ('LED Desk Lamp', 'Adjustable brightness desk lamp with USB charging port', 29.99, 100, 'http://images.amazon.com/images/P/B079BNYJMT.01._SCMZZZZZZZ_.jpg'),
+-- ('Wireless Bluetooth Earbuds', 'Noise-cancelling wireless earbuds with charging case', 59.99, 150, 'http://images.amazon.com/images/P/B07MCGZK3B.01._SCMZZZZZZZ_.jpg'),
+-- ('Stainless Steel Water Bottle', '24 oz double-wall vacuum insulated water bottle', 19.99, 200, 'http://images.amazon.com/images/P/B07P6WRCJT.01._SCMZZZZZZZ_.jpg'),
+-- ('Yoga Mat', 'Eco-friendly non-slip yoga mat', 25.99, 120, 'http://images.amazon.com/images/P/B086BZL6JT.01._SCMZZZZZZZ_.jpg'),
+-- ('Backpack', 'Water-resistant travel backpack with laptop compartment', 49.99, 90, 'http://images.amazon.com/images/P/B076H2J5ZG.01._SCMZZZZZZZ_.jpg'),
+-- ('Electric Kettle', '1.7L stainless steel electric kettle with auto shut-off', 29.95, 80, 'http://images.amazon.com/images/P/B07WDLGYB2.01._SCMZZZZZZZ_.jpg'),
+-- ('Smartwatch', 'Fitness tracker with heart rate monitor', 99.99, 110, 'http://images.amazon.com/images/P/B07WSQLKHM.01._SCMZZZZZZZ_.jpg'),
+-- ('Gaming Mouse', 'RGB backlit gaming mouse with adjustable DPI', 35.99, 140, 'http://images.amazon.com/images/P/B07W5PD6VS.01._SCMZZZZZZZ_.jpg'),
+-- ('Portable Charger', '10000mAh power bank with dual USB ports', 21.99, 130, 'http://images.amazon.com/images/P/B07S829LBX.01._SCMZZZZZZZ_.jpg'),
+-- ('Bluetooth Speaker', 'Waterproof portable Bluetooth speaker', 39.99, 85, 'http://images.amazon.com/images/P/B07FZ3C97K.01._SCMZZZZZZZ_.jpg'),
+-- ('Robot Vacuum Cleaner', 'Automatic robot vacuum cleaner with smart navigation', 149.99, 70, 'http://images.amazon.com/images/P/B07D75MVX9.01._SCMZZZZZZZ_.jpg'),
+-- ('Action Camera', '4K action camera with waterproof case', 79.99, 60, 'http://images.amazon.com/images/P/B07B2W96JH.01._SCMZZZZZZZ_.jpg'),
+-- ('Bookshelf', '5-tier industrial style bookshelf', 89.99, 50, 'http://images.amazon.com/images/P/B07KTVTG8Z.01._SCMZZZZZZZ_.jpg'),
+-- ('Coffee Maker', 'Single serve coffee maker with reusable filter', 59.95, 100, 'http://images.amazon.com/images/P/B07KMSBSZC.01._SCMZZZZZZZ_.jpg'),
+-- ('Memory Foam Pillow', 'Orthopedic contour memory foam pillow', 29.99, 150, 'http://images.amazon.com/images/P/B07SDFC9QT.01._SCMZZZZZZZ_.jpg'),
+-- ('Office Chair', 'Ergonomic office chair with lumbar support', 109.99, 80, 'http://images.amazon.com/images/P/B01HEJ5IXS.01._SCMZZZZZZZ_.jpg'),
+-- ('Sneakers', 'Lightweight running sneakers for men and women', 49.99, 200, 'http://images.amazon.com/images/P/B07T4KPYN2.01._SCMZZZZZZZ_.jpg'),
+-- ('Waffle Maker', 'Non-stick Belgian waffle maker with adjustable browning', 25.99, 90, 'http://images.amazon.com/images/P/B07C32SQCS.01._SCMZZZZZZZ_.jpg'),
+-- ('Air Fryer', '5.8QT large capacity air fryer with touchscreen', 99.99, 70, 'http://images.amazon.com/images/P/B07VM28XTR.01._SCMZZZZZZZ_.jpg'),
+-- ('Desk Organizer', 'Wooden desk organizer with drawers', 19.99, 160, 'http://images.amazon.com/images/P/B07L87MH64.01._SCMZZZZZZZ_.jpg');
+
 
 -- Create customers table if it doesn't exist
 CREATE TABLE IF NOT EXISTS customers (

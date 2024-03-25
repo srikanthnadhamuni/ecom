@@ -1,12 +1,9 @@
-import ListGroup from "./components/ListGroup";
-import "./App.css";
+import ProductList from "./components/ProductList";
 
 function App() {
-  let items = ["New York", "San Francisco", "Los Angeles", "Chicago"];
-
   return (
-    <div>
-      <ListGroup heading={"Cities"} />
+    <div align="center">
+      <ProductList heading={"Product List"} />
     </div>
   );
 }
