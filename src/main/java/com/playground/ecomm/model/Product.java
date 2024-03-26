@@ -1,7 +1,7 @@
 // The Product class holds all the products that are available for sale. They are viewable by customers who can place orders for them.
 // This is the model class for the Product entity. It is annotated with @Entity to indicate that it is a JPA entity.
 // Its autolinked with the table name "products" using the @Table annotation.
-package com.playground.ecommerce21.model;
+package com.playground.ecomm.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

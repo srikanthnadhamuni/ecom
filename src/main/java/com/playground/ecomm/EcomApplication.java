@@ -1,6 +1,6 @@
-package com.playground.ecommerce21;
+package com.playground.ecomm;
 
-import com.playground.ecommerce21.repository.ProductRepository;
+import com.playground.ecomm.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

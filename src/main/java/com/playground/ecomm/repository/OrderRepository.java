@@ -1,9 +1,8 @@
-package com.playground.ecommerce21.repository;
+package com.playground.ecomm.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.playground.ecommerce21.model.Order;
+import com.playground.ecomm.model.Order;
 import org.springframework.stereotype.Repository;
-
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {

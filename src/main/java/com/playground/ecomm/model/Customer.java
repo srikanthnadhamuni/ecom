@@ -1,7 +1,7 @@
 // The Customer class holds all the customer details. They are used for placing orders and for shipping the products to the customer.
 // This is the model class for the Customer entity. It is annotated with @Entity to indicate that it is a JPA entity.
 // Its autolinked with the table name "customers" using the @Table annotation.
-package com.playground.ecommerce21.model;
+package com.playground.ecomm.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -13,16 +13,21 @@ public class Customer {
     @Id
     private long id;
     private String name; // first and last names are part of the name
-    private String email; // email is used for login and for sending order notifications to the customer. Backend needs to validate the email address.
-    private String phone; // mobile number is used sometimes for rev-verfiying or for 2FA of the customer through an OTP.
-    private String address; 
+    private String email; // email is used for login and for sending order notifications to the customer.
+                          // Backend needs to validate the email address.
+    private String phone; // mobile number is used sometimes for rev-verfiying or for 2FA of the customer
+                          // through an OTP.
+    private String address;
     private String city;
-    private String state; // state needs to be a valid state in the country. Backend needs to validate the state.
-    private String pincode; // The pincode is used not just for addressing, but also for calculating the shipping cost and taxes.
+    private String state; // state needs to be a valid state in the country. Backend needs to validate the
+                          // state.
+    private String pincode; // The pincode is used not just for addressing, but also for calculating the
+                            // shipping cost and taxes.
     private String country;
 
     // Constructor that takes all fields as arguments
-    public Customer(long id, String name, String email, String phone, String address, String city, String state, String pincode, String country) {
+    public Customer(long id, String name, String email, String phone, String address, String city, String state,
+            String pincode, String country) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -106,7 +111,7 @@ public class Customer {
     public String getPincode() {
         return pincode;
     }
-    
+
     public void setPincode(String pincode) {
         // Validate pincode format using regex
         String pincodeRegex = "^[1-9][0-9]{5}$";

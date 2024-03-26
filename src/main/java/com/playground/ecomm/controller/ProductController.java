@@ -6,10 +6,10 @@
 // The ProductService is autowired to the controller.
 // The ProductService class is used to interact with the database.
 
-package com.playground.ecommerce21.controller;
+package com.playground.ecomm.controller;
 
-import com.playground.ecommerce21.model.Product;
-import com.playground.ecommerce21.service.ProductService;
+import com.playground.ecomm.model.Product;
+import com.playground.ecomm.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;

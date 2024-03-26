@@ -2,14 +2,13 @@
 // This is the model class for the Order entity. It is annotated with @Entity to indicate that it is a JPA entity.
 // Its autolinked with the table name "orders" using the @Table annotation.
 
-package com.playground.ecommerce21.model;
+package com.playground.ecomm.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
-
 
 @Entity
 @Table(name = "orders")
@@ -50,7 +49,8 @@ public class Order {
     }
 
     public void setStatus(String status) {
-        if (status.equals("placed") || status.equals("shipped") || status.equals("delivered") || status.equals("cancelled")) {
+        if (status.equals("placed") || status.equals("shipped") || status.equals("delivered")
+                || status.equals("cancelled")) {
             this.status = status;
         } else {
             throw new IllegalArgumentException("Invalid status");

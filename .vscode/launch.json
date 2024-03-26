@@ -1,14 +1,24 @@
 {
-    "configurations": [
-        {
-            "type": "java",
-            "name": "Spring Boot-EcomApplication<ecom>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.playground.ecommerce21.EcomApplication",
-            "projectName": "ecom",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
-        }
-    ]
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-EcomApplication<ecom>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.playground.ecommerce21.EcomApplication",
+      "projectName": "ecom",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-EcomApplication<ecom>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.playground.ecomm.EcomApplication",
+      "projectName": "ecom",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
 }

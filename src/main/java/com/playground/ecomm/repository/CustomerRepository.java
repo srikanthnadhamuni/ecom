@@ -1,8 +1,8 @@
-package com.playground.ecommerce21.repository;
+package com.playground.ecomm.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.playground.ecommerce21.model.Customer;
+import com.playground.ecomm.model.Customer;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {

@@ -1,10 +1,10 @@
-package com.playground.ecommerce21.service;
+package com.playground.ecomm.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import com.playground.ecommerce21.model.Product;
-import com.playground.ecommerce21.repository.ProductRepository;
+import com.playground.ecomm.model.Product;
+import com.playground.ecomm.repository.ProductRepository;
 
 @Service
 public class ProductService {

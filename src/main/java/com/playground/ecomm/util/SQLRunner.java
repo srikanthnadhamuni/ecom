@@ -1,4 +1,4 @@
-package com.playground.ecommerce21.util;
+package com.playground.ecomm.util;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +29,3 @@ public class SQLRunner {
         }
     }
 }
-
