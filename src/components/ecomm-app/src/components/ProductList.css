@@ -1,0 +1,97 @@
+/* ProductList.css */
+
+.card-container {
+    border: 5px solid rgb(255, 140, 0)
+    /* margin-bottom: 30px; */
+    /* margin-left: 10px; */
+}
+
+.card-container.active {
+    border: 2px solid blue;
+
+}
+
+.card {
+    border: 5px solid #1417a8;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.card-body {
+    /* display:grid; */
+    /* justify-content:safe; */
+    /* align-items:flex-start; */
+}
+
+.card-img-top {
+    width: 200px !important;
+    height: 200px !important;
+    object-fit: cover;
+}
+
+.card-title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    font-style: normal;
+    color: maroon;
+}
+
+.card-title.active {
+    color: blue;
+}
+
+.view-button {
+    background-color: #1417a8;
+    width: 200px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.btn {
+    size: 10px;
+    background-color: #1417a8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/* Media Queries */
+
+/* For tablets */
+@media only screen and (max-width: 768px) {
+    .card-img-top {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .card-title {
+        font-size: large;
+    }
+}
+
+/* For smartphones */
+@media only screen and (max-width: 480px) {
+    .card-img-top {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .card-title {
+        font-size: medium;
+    }
+}
